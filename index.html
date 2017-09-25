@@ -1,47 +1,71 @@
 <!DOCTYPE html>
-<html lang="fr">
-
+<html lang="en">
 <head>
-	<title>Château Rayas Officiel</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="style.css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <meta charset="utf-8">
+    <title>Château Rayas Officiel</title>
+ 
+    <!-- Le meta pour appareil mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ 
+    <!--css-->
+    <link rel="stylesheet" href="style.css">
+ 
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="favicon.ico">
+ 
 </head>
+<body id="home">
 
-	<body>
-	<div class="nav">
+	<header>
+ 
+    <h1 class="logo"><a href="index.html"><img src="home.ico" width="10%" height="10%"></a></h1>
+ 
+    <a class="to_nav" href="#primary_nav">Menu</a>
+ 
+	</header>
+	
+	<article class="wrapper">
+		<div>
+			<img src="vignesetventouxtexte.jpg" alt="Vignes et Ventoux" style=width:100%>
+		</div>
+	
+		<div>	
+			<p>Au cœur des appellations viticoles méridionales de la Vallée du Rhône, Emmanuel Reynaud vous propose ses vins en Appellation d'Origine Contrôlée
+			Châteauneuf du Pape, Côtes du Rhône, Vacqueyras et Côtes du Rhône Village. En rouge et blanc, ces vins sont issus des vignobles de différents domaines :
+			Château Rayas, Château Fonsalette et Château des Tours par la famille Reynaud, viticulteurs de génération en génération depuis 1880.
+			Aujourd'hui ces vins sont élevés dans les caves de deux domaines : Château Rayas et Château des Tours.</p>
+		</div>
+		
+		<div class="row">
+			<div class="column"> <a href="domainerayas.htm"> <img src="logorayas.jpg" alt="Rayas" width="310" height="200"></a> </div>
+			<div class="column"> <a href="domainedestours.htm"> <img src="logodestours.jpg" alt="Rayas" width="310" height="200"></a> </div>
+			<div class="column"> <a href="domainefonsalette.htm"> <img src="logofonsalette.jpg" alt="Rayas" width="310" height="200"></a> </div>
+		</div>
+ 
+	</article>
+	
+	<nav id="primary_nav">
+ 
 		<ul>
-			<li><a href="index.html">Accueil</a></li>
+
 			<li><a href="historique.htm">Historique</a></li>
 			<li><a href="domaines.htm">Les domaines</a></li>
 			<li><a href="vins.htm">Les vins</a></li>
 			<li><a href="importateurs.htm">Les importateurs</a></li>
 			<li><a href="phototheque.htm">La photothèque</a></li>
 			<li><a href="contacts.htm">Contacts</a></li>
+ 
+			<li class="top"><a href="#home">Haut de la page</a></li>
+ 
 		</ul>
-	</div>
+ 
+	</nav><!--end primary_nav-->
 	
-	<div>
-		<img src="vignesetventouxtexte.jpg" alt="Vignes et Ventoux" style=width:100%>
-	</div>
-	
-	<div class="header">	
-		<p>Au cœur des appellations viticoles méridionales de la Vallée du Rhône, Emmanuel Reynaud vous propose ses vins en Appellation d'Origine Contrôlée
-			Châteauneuf du Pape, Côtes du Rhône, Vacqueyras et Côtes du Rhône Village. En rouge et blanc, ces vins sont issus des vignobles de différents domaines :
-			Château Rayas, Château Fonsalette et Château des Tours par la famille Reynaud, viticulteurs de génération en génération depuis 1880.
-			Aujourd'hui ces vins sont élevés dans les caves de deux domaines : Château Rayas et Château des Tours.</p>
-	</div>
-	
-	<div class="row">
-		<div class="column"> <a href="domainerayas.htm"> <img src="logorayas.jpg" alt="Rayas" width="310" height="200"> </div>
-		<div class="column"> <a href="domainedestours.htm"> <img src="logodestours.jpg" alt="Rayas" width="310" height="200"> </div>
-		<div class="column"> <a href="domainefonsalette.htm"> <img src="logofonsalette.jpg" alt="Rayas" width="310" height="200"> </div>
-	</div>
-
-	<div class="footer"><a href="contacts.htm">
-		<p>Château Rayas : +33(0)4 90 83 73 09 - Château des Tours : +33(0)4 90 65 41 75</p>
+	<footer>
+		<a href="contacts.htm"><p>Château Rayas : +33(0)4 90 83 73 09 - Château des Tours : +33(0)4 90 65 41 75</p></a>
 		<p>L'ABUS D'ALCOOL EST DANGEREUX POUR LA SANTÉ. A CONSOMMER AVEC MODÉRATION</p>
-	</div>
-
-	</body>
+	</footer>
+		
+</body>
 </html>

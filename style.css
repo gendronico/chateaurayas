@@ -60,7 +60,7 @@ table {
     border-spacing: 0;
 }
 /*---------------------------------------------------------------------------------------------*/
-/*début style*/
+/*dÃ©but style*/
  
 * {
     box-sizing: border-box;
@@ -193,7 +193,7 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
-  .topnav.responsive {position: fixed;width: 100%}
+  .topnav.responsive {position: sticky;top: 0;width: 100%}
   .topnav.responsive .icon {
     position: absolute;
     right: 0;

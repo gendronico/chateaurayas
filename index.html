@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
  
   <meta charset="utf-8">
@@ -10,6 +10,7 @@
  
     <!--css-->
     <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
  
     <!-- Favicons-->
     <link rel="shortcut icon" href="favicon.ico">
@@ -17,17 +18,22 @@
 </head>
 <body id="home">
 
-	<header>
- 
-    <h1 class="logo"><a href="index.html"><img src="home.ico" width="10%" height="10%"></a></h1>
- 
-    <a class="to_nav" href="#primary_nav">Menu</a>
- 
-	</header>
+	<div class="topnav" id="myTopnav">
+			<a class="material-icons" href="index.html" style="font-size:20px;">home</a>
+			
+			<a href="historique.htm">Historique</a>
+			<a href="domaines.htm">Les domaines</a>
+			<a href="vins.htm">Les vins</a>
+			<a href="importateurs.htm">Les importateurs</a>
+			<a href="phototheque.htm">La photothèque</a>
+			<a href="contacts.htm">Contacts</a>
+	 
+			<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+	</div>
 	
 	<article class="wrapper">
-		<div>
-			<img src="vignesetventouxtexte.jpg" alt="Vignes et Ventoux" style=width:100%>
+		<div class="box01">
+			<h1>Vignobles de la famille Reynaud<br>Vallée du Rhône</h1>
 		</div>
 	
 		<div>	
@@ -38,34 +44,30 @@
 		</div>
 		
 		<div class="row">
-			<div class="column"> <a href="domainerayas.htm"> <img src="logorayas.jpg" alt="Rayas" width="310" height="200"></a> </div>
+			<!--<div class="column"> <a href="domainerayas.htm"> <img src="logorayas.jpg" alt="Rayas" width="310" height="200"></a> </div>
 			<div class="column"> <a href="domainedestours.htm"> <img src="logodestours.jpg" alt="Rayas" width="310" height="200"></a> </div>
-			<div class="column"> <a href="domainefonsalette.htm"> <img src="logofonsalette.jpg" alt="Rayas" width="310" height="200"></a> </div>
+			<div class="column"> <a href="domainefonsalette.htm"> <img src="logofonsalette.jpg" alt="Rayas" width="310" height="200"></a> </div>-->
+			<a class="column" href="domainerayas.htm"> Domaine Rayas </a>
+			<a class="column" href="domainedestours.htm"> Domaine des Tours </a>
+			<a class="column" href="domainefonsalette.htm"> Domaine de Fonsalette </a>
 		</div>
  
 	</article>
 	
-	<nav id="primary_nav">
- 
-		<ul>
-
-			<li><a href="historique.htm">Historique</a></li>
-			<li><a href="domaines.htm">Les domaines</a></li>
-			<li><a href="vins.htm">Les vins</a></li>
-			<li><a href="importateurs.htm">Les importateurs</a></li>
-			<li><a href="phototheque.htm">La photothèque</a></li>
-			<li><a href="contacts.htm">Contacts</a></li>
- 
-			<li class="top"><a href="#home">Haut de la page</a></li>
- 
-		</ul>
- 
-	</nav><!--end primary_nav-->
-	
-	<footer>
-		<a href="contacts.htm"><p>Château Rayas : +33(0)4 90 83 73 09 - Château des Tours : +33(0)4 90 65 41 75</p></a>
-		<p>L'ABUS D'ALCOOL EST DANGEREUX POUR LA SANTÉ. A CONSOMMER AVEC MODÉRATION</p>
+	<footer class="wrapper">
+		<p><a href="contacts.htm">Château Rayas : +33(0)4 90 83 73 09 - Château des Tours : +33(0)4 90 65 41 75</a><br>L'ABUS D'ALCOOL EST DANGEREUX POUR LA SANTÉ. A CONSOMMER AVEC MODÉRATION</p>
 	</footer>
-		
+	
+	<script>
+		function myFunction() {
+			var x = document.getElementById("myTopnav");
+			if (x.className === "topnav") {
+				x.className += " responsive"; <!-- Espace devant responsive est important -->
+			} else {
+				x.className = "topnav";
+			}
+		}
+	</script>
+	
 </body>
 </html>

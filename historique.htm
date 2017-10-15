@@ -13,7 +13,10 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
  
     <!-- Favicons-->
-    <link rel="shortcut icon" href="favicon.ico"> 
+    <link rel="shortcut icon" href="favicon.ico">
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body id="home">
@@ -32,6 +35,45 @@
  
 	</div>
 	
+	
+	<div class="timeline-container" id="timeline-1">
+	  <div class="timeline-header">
+		<h2 class="timeline-header__title">L'expérience de quatre générations de vignerons</h2>
+		<h3 class="timeline-header__subtitle">FAMILLE REYNAUD</h3>
+	  </div>
+	  
+	  <div class="timeline">
+		<div class="timeline-item" data-text="ALBERT REYNAUD">
+		  <div class="timeline__content"><img class="timeline__img" src="albertreynaudsom.jpg"/>
+			<h2 class="timeline__content-title">1880</h2>
+			<p class="timeline__content-desc">Albert Reynaud, l'arrière grand-père d'Emmanuel Reynaud, alors notaire dans les environs d'Avignon, devenu sourd à l'âge de 45 ans, a dû se reconvertir : il a pour cela acheté le Rayas en 1880 pour l'exploiter.</p>
+		  </div>
+		</div>
+		
+		<div class="timeline-item" data-text="LOUIS REYNAUD">
+		  <div class="timeline__content"><img class="timeline__img" src="louisreynaudsom.jpg"/>
+			<h2 class="timeline__content-title">1920</h2>
+			<p class="timeline__content-desc">En 1920, grâce à son fils Louis Reynaud, le vin du Rayas est mis en bouteille; débute alors la distribution locale et nationale. <br>Louis achète en 1935-38 le Domaine des Tours, situé à Sarrians, propriété agricole et polyculture, et la confie à son fils Bernard. Louis achète également en 1945 le Château de Fonsalette, situé au nord d'Orange, sur la commune de Lagarde-Paréol, propriété d'une dizaine d'hectares de vignes, de bois et d'oliviers.</p>
+		  </div>
+		</div>
+		
+		<div class="timeline-item" data-text="JACQUES REYNAUD">
+		  <div class="timeline__content"><img class="timeline__img" src="jacquesreynaudsom.jpg"/>
+			<h2 class="timeline__content-title">1978</h2>
+			<p class="timeline__content-desc">En 1978, Jacques, le fils cadet de Louis, succède à son père et exploite le Rayas et Fonsalette : il y vinifie de nombreux millésimes, s'intéresse particulièrement à l'équilibre du sol et à son incidence sur la qualité des vins.</p>
+		  </div>
+		</div>
+		
+		<div class="timeline-item" data-text="EMMANUEL REYNAUD">
+		  <div class="timeline__content"><img class="timeline__img" src="emmanuelreynaudsom.jpg"/>
+			<h2 class="timeline__content-title">1997</h2>
+			<p class="timeline__content-desc">En 1997, Jacques Reynaud décède subitement, la direction et l'exploitation des domaines sont confiées à Emmanuel, son neveu, qui exploitait déjà le Domaine des Tours ou il avait crée la cave et développé la commercialisation dès 1989. <br>Aujourd'hui, Emmanuel Reynaud exploite les trois domaines aidé de ses salariés.</p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div class="demo-footer"><a href="contacts.htm">Château Rayas : +33(0)4 90 83 73 09 - Château des Tours : +33(0)4 90 65 41 75</a><br>L'ABUS D'ALCOOL EST DANGEREUX POUR LA SANTÉ. A CONSOMMER AVEC MODÉRATION</div>
+	
 	<script>
 		function myFunction() {
 			var x = document.getElementById("myTopnav");
@@ -41,6 +83,42 @@
 				x.className = "topnav";
 			}
 		}
+		
+	(function($) {
+  $.fn.timeline = function() {
+    var selectors = {
+      id: $(this),
+      item: $(this).find(".timeline-item"),
+      activeClass: "timeline-item--active",
+      img: ".timeline__img"
+    };
+    selectors.item.eq(0).addClass(selectors.activeClass);
+    selectors.id.css("background-image", "url(" + selectors.item.first().find(selectors.img).attr("src") + ")");
+
+    var itemLength = selectors.item.length;
+    $(window).scroll(function() {
+      var max, min;
+      var pos = $(this).scrollTop();
+      selectors.item.each(function(i) {
+        min = $(this).offset().top;
+        max = ($(this).height() + $(this).offset().top);
+        var that = $(this)
+        if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+          selectors.item.removeClass(selectors.activeClass);
+          selectors.id.css("background-image", "url(" + selectors.item.last().find(selectors.img).attr('src') + ")");
+          selectors.item.last().addClass(selectors.activeClass)
+        } else if (pos <= max - 40 && pos >= min) {
+          selectors.id.css("background-image", "url(" + $(this).find(selectors.img).attr('src') + ")");
+          selectors.item.removeClass(selectors.activeClass);
+          $(this).addClass(selectors.activeClass);
+        }
+
+      });
+    });
+
+  }
+})(jQuery);
+$("#timeline-1").timeline();
 	</script>
 	
 </body>
